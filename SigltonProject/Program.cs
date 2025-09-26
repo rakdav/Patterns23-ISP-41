@@ -1,5 +1,6 @@
 ﻿DatabaseHelper.GetConnection().InsertData("123");
 Console.WriteLine("Data: "+DatabaseHelper.GetConnection().SelectData());
+
 public class DatabaseHelper
 {
     private string _data;
