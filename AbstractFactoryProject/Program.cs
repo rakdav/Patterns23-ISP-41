@@ -1,4 +1,14 @@
-﻿interface IEngine
+﻿IFactory jFactory=new JapaneseFactory();
+IEngine jEngine=jFactory.CreateEngine();
+ICar jCar=jFactory.CreateCar();
+jCar.ReleaseCar(jEngine);
+
+IFactory rFactory = new RussianFactory();
+IEngine rEngine = rFactory.CreateEngine();
+ICar rCar = rFactory.CreateCar();
+rCar.ReleaseCar(rEngine);
+
+interface IEngine
 {
     void ReleaseEngine();
 }
