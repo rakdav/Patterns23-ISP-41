@@ -9,8 +9,7 @@ namespace SigltonForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormOpen openForm=new FormOpen();
-            openForm.Show();
+            FormOpen.getInstance().Show();
         }
     }
 }

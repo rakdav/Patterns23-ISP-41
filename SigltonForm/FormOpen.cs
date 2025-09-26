@@ -12,9 +12,16 @@ namespace SigltonForm
 {
     public partial class FormOpen : Form
     {
-        public FormOpen()
+        private static FormOpen Instance;
+        private FormOpen()
         {
             InitializeComponent();
+        }
+        public static FormOpen getInstance()
+        {
+            if (Instance == null)
+                Instance = new FormOpen();
+            return Instance;
         }
     }
 }
