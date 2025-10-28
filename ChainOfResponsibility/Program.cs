@@ -1,6 +1,20 @@
-﻿
+﻿void GiveCommand(IWorker worker,string command)
+{
+    string str = worker.Execute(command);
+    if(str=="") Console.WriteLine("no one knows how to do");
+    else Console.WriteLine(str);
+}
 
+Designer designer=new Designer();
+Carpenters carpenters = new Carpenters();
+FinishingWorker finishingWorker=new FinishingWorker();
 
+designer.SetNextWorker(carpenters).SetNextWorker(finishingWorker);
+GiveCommand(designer, "design a house");
+GiveCommand(designer, "laying a brick");
+GiveCommand(designer, "glue wallpaper");
+
+GiveCommand(designer, "conduct the transaction");
 interface IWorker
 {
     IWorker SetNextWorker(IWorker worker);
